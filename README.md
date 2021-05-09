@@ -1,4 +1,4 @@
-# IS219_Express-Passport-Authentication-with-Auth0
+# IS219_Final_Project
 
 ### To make this authentication page work follow these steps
 1. Clone the Repo
