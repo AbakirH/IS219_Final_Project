@@ -1,12 +1,20 @@
+const { DataTypes } = require("sequelize/types");
+
 module.exports = (sequelize, Sequelize) => {
     const Task = sequelize.define("Task", {
       title: {
         type: Sequelize.STRING
       },
-      description: {
+      owneremail: {
         type: Sequelize.STRING
       },
-      published: {
+      ownerid: {
+        type: DataTypes.INTEGER
+      },
+      message: {
+        type: Sequelize.STRING
+      },
+      isdone: {
         type: Sequelize.BOOLEAN
       }
     });

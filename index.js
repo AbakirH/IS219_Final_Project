@@ -38,6 +38,9 @@ const port = process.env.PORT || "8000";
 if (app.get("env") === "production") {
   // Serve secure cookies, requires HTTPS
   session.cookie.secure = true; 
+  db.sequelize.sync({ force: true }).then(() => {
+    console.log("Drop and re-sync db.");
+  });
 }
 
 /**
