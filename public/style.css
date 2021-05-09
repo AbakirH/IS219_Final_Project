@@ -95,6 +95,10 @@ a {
 }
 
 .Message {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     background: white;
     padding: 30px;
     border-bottom: var(--ui-shadow-border);
@@ -140,7 +144,15 @@ a {
     border-bottom: var(--ui-shadow-border);
     box-shadow: var(--ui-shadow);
 }
+.Auth{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+}
 .WelcomeView {
     background: url("food.jpg") left bottom;
     background-size: cover;
