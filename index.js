@@ -14,6 +14,8 @@
  require("dotenv").config();
  
  const authRouter = require("./auth");
+ const db = require("./models/tasks");
+ db.sequelize.sync();
 
 /**
  * App Variables
