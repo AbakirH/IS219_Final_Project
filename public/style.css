@@ -1,53 +1,140 @@
 * {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-    background-color: #87ceeb;
-    height:100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+      background-color: #87ceeb;
+      height:100%;
+      width:100%;
+  }
+  
+  .content {
+      height:100%;
+      width:100%;
+      background-position: center;
+      padding: 10px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+  }
+  
+  .content h1 {
+      font-family: "Baskerville Old Face";
+  }
+  
+  .myButton {
+      background-color:#77b55a;
+      border-radius:28px;
+      border:2px solid #4b8f29;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:21px;
+      padding:15px 27px;
+      text-decoration:none;
+      text-shadow:0px 1px 1px #5b8a3c;
+  }
+  .myButton:hover {
+      background-color:#72b352;
+  }
+  .myButton:active {
+      position:relative;
+      top:1px;
+  }
+  
+  .buttons{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   height:100%;
+  }
+  
+  .form{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+  }
+  
+  input{
+      -ms-box-sizing:content-box;
+      -moz-box-sizing:content-box;
+      box-sizing:content-box;
+      -webkit-box-sizing:content-box; 
+  }
+  
+  #task{
+    padding: 0;
+  }
+  .navbar{
+    background-color: #3FB2E1 !important;
+    
+  }
+  .navbar-nav{
     width:100%;
-}
-
-.content {
-    height:100%;
-    width:100%;
-    background-position: center;
-    padding: 10px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.content h1 {
-    font-family: "Baskerville Old Face";
-}
-
-.myButton {
-	background-color:#77b55a;
-	border-radius:28px;
-	border:2px solid #4b8f29;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:21px;
-	padding:15px 27px;
-	text-decoration:none;
-	text-shadow:0px 1px 1px #5b8a3c;
-}
-.myButton:hover {
-	background-color:#72b352;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-
-.buttons{
- display:flex;
- justify-content:center;
- align-items:center;
- height:100%;
-}
-
+    justify-content: space-between !important;
+  }
+  
+  .nav-link{
+  font-size: 20px;
+  }
+  .test{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+  }
+  .signOut{
+    color: black;
+  }
+  
+  
+  #toDo, #completed{
+      width:100%;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      border: solid black 0.5px;
+  }
+  
+  .tasks{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+  }
+  #both{
+      height:100%;
+      width:100%;
+      display:flex;
+      justify-content:space-around;
+  }
+  
+  .modal-content>p{
+    margin:0%;
+    text-align:center;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+  .modal-header{
+    padding-bottom: 0%;
+  }
+  .description{
+  max-width: 40%;
+  }
+  @media only screen and (max-width: 650px) {
+      #both{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+      }
+      
+      .navbar{
+        width:100%;
+        justify-content: center !important;
+      }
+  }
