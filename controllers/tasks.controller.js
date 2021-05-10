@@ -2,10 +2,31 @@ const db = require("../models");
 const Tasks = db.tasks;
 const Op = db.Sequelize.Op;
 
+function getTime(date){
+  console.log(date);
+  let today = date;
+  let dd = today.getDate();
+
+  let mm = today.getMonth()+1; 
+  const yyyy = today.getFullYear();
+  if(dd<10) 
+  {
+      dd=`0${dd}`;
+  } 
+
+  if(mm<10) 
+  {
+      mm=`0${mm}`;
+  } 
+  let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  today = `${mm}-${dd}-${yyyy}` + " " +time;
+  return today;
+}
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
   // Validate request
-  if (!req.body.title) {
+  console.log(req);
+  if (!req.body) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
@@ -14,15 +35,19 @@ exports.create = (req, res) => {
 
   // Create a Tutorial
   const task = {
-    title: req.body.title,
-    description: req.body.description,
-    published: req.body.published ? req.body.published : false
+    title: req.body.task,
+    owneremail: req.user.displayName,
+    ownerid:1,
+    message: req.body.description,
+    createddate: getTime(new Date()),
+    duedate: getTime(new Date(req.body.dueDate +" "+ req.body.dueTime)),
+    isdone: 0
   };
-
+  console.log(req.body.dueDate +" "+ req.body.dueTime);
   // Save Tutorial in the database
   Tasks.create(task)
     .then(data => {
-      res.send(data);
+      res.redirect("/api/tasks/getAllTasks");
     })
     .catch(err => {
       res.status(500).send({
@@ -41,7 +66,6 @@ exports.findAll = (req, res, next) => {
     .then(data => { 
       tasks = data;
       console.log(tasks, req.user);
-      
       res.render("tasks", {
         title: "Tasks",
         userProfile, userProfile,
