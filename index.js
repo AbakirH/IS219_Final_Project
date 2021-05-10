@@ -14,8 +14,9 @@
  require("dotenv").config();
  
  const authRouter = require("./auth");
- const db = require("./models/tasks");
- db.sequelize.sync();
+ const cors = require("cors");
+ const db = require("./models");
+
 
 /**
  * App Variables
@@ -23,6 +24,7 @@
 
 const app = express();
 const port = process.env.PORT || "8000";
+
 
 /**
  * Session Configuration
@@ -68,9 +70,17 @@ if (app.get("env") === "production") {
 /**
  *  App Configuration
  */
+ var corsOptions = {
+  origin: "http://localhost:8081"
+};
 
+ app.use(cors(corsOptions));
+ app.use(express.urlencoded({ extended: true }));  
+ app.use(express.json());  
+ 
  app.set("views", path.join(__dirname, "views"));
- app.set("view engine", "pug");
+ app.engine('html', require('ejs').renderFile);
+ app.set('view engine', 'html');
  app.use(express.static(path.join(__dirname, "public")));
  
  app.use(expressSession(session));
@@ -119,6 +129,9 @@ app.get("/user", secured, (req, res, next) => {
     userProfile: userProfile
   });
 });
+db.sequelize.sync();
+
+require("./routes/tasks.routes")(app);
 
 /**
  * Server Activation

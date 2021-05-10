@@ -19,7 +19,7 @@
       scope: "openid email profile"
     }),
     (req, res) => {
-      res.redirect("/");
+      res.redirect("/api/tasks/getAllTasks");
     }
   );
   
@@ -37,7 +37,7 @@
         }
         const returnTo = req.session.returnTo;
         delete req.session.returnTo;
-        res.redirect(returnTo || "/");
+        res.redirect(returnTo || "/api/tasks/getAllTasks");
       });
     })(req, res, next);
   });

@@ -1,7 +1,7 @@
-const { DataTypes } = require("sequelize/types");
+// const { DataTypes } = require("sequelize/types");
 
 module.exports = (sequelize, Sequelize) => {
-    const Task = sequelize.define("Task", {
+    const Task = sequelize.define("todos", {
       title: {
         type: Sequelize.STRING
       },
@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       ownerid: {
-        type: DataTypes.INTEGER
+        type: Sequelize.STRING
       },
       message: {
         type: Sequelize.STRING
