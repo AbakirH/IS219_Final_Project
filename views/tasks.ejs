@@ -37,7 +37,7 @@ block layout-content
         <a class="nav-link" href="#"> Tasks</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">Name: </a>
+        <a class="nav-link" href="#">Name: <%= userProfile.nickname %></a>
       </li>
 	  <a href="/logout" class="btn btn-primary signOut"  name="signOut">Logout</a>
 	</form>
@@ -57,7 +57,7 @@ block layout-content
                 </button>
               </div>
               <div class='modal-body'>
-              <label>Email address: $email</label>
+              <label>Email address: <%= userProfile.displayName %></label>
                 <form action='./taskFunctions.php' method='POST'>
                 <div class='form-group'>
                   <label>Task Title:</label>

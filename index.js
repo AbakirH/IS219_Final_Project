@@ -80,7 +80,7 @@ if (app.get("env") === "production") {
  
  app.set("views", path.join(__dirname, "views"));
  app.engine('html', require('ejs').renderFile);
- app.set('view engine', 'html');
+ app.set('view engine', 'ejs');
  app.use(express.static(path.join(__dirname, "public")));
  
  app.use(expressSession(session));
