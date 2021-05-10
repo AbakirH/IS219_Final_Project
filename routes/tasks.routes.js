@@ -20,16 +20,16 @@ module.exports = app => {
     // router.get("/published", tasks.findAllPublished);
   
     // // Retrieve a single Tutorial with id
-    router.get("/:id", tasks.findOne);
+    // router.get("/:id", tasks.findOne);
   
-    // // Update a Tutorial with id
-    router.put("/update", tasks.update);
+    // // // Update a Tutorial with id
+    // router.put("/update", tasks.update);
   
-    // // Delete a Tutorial with id
-    router.delete("/delete", tasks.delete);
+    // // // Delete a Tutorial with id
+    // router.delete("/delete", tasks.delete);
   
-    // // Delete all Tutorials
-    router.delete("/deleteAll", tasks.deleteAll);
+    // // // Delete all Tutorials
+    // router.delete("/deleteAll", tasks.deleteAll);
   
     app.use('/api/tasks', router);
   };

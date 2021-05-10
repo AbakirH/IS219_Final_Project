@@ -20,13 +20,18 @@
 	</form>
     </ul>
 </nav>
-        <div id='both'><div id='toDo'><h1>To-Do Tasks</h1>
-          <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#addTask'>
-            Add a New Task
-            </button>
-            <div class='modal fade' id='addTask' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-            <div class='modal-dialog' role='document'>
-              <div class='modal-content'>
+
+
+
+  <div id='both'>
+    
+    <div id='toDo'><h1>To-Do Tasks</h1>
+      <button type='button' class='btn btn-primary center' data-toggle='modal' data-target='#addTask'>
+        Add a New Task
+        </button>
+        <div class='modal fade' id='addTask' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+          <div class='modal-dialog' role='document'>
+            <div class='modal-content'>
               <div class='modal-header'>
                 <h5 class='modal-title' id='exampleModalLabel'>Task Information</h5>
                 <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
@@ -53,13 +58,20 @@
                   <input required name='dueTime' type='time' id='time'>
                 </div>
                 <input type='submit' class='btn btn-primary' name='addTask'
-                   value='Add Task'>
-              </form>
-              </div>
+                  value='Add Task'>
+                </form>
               </div>
             </div>
-            </div>
-            <br/>
+          </div>
+        </div>
+    </div>
+    <br/>
+    <div id='completed'><h1>Completed Tasks</h1>
+    </div>
+  </div>
+        
+
+        
 
 </body>
 <script src="../../script.js" ></script>
