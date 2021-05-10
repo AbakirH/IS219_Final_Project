@@ -16,3 +16,4 @@
 5. If needed to change the database location of where you are putting the sql data edit dbNJIT-config.js in the models folder
 
 ### App Works like this 
+![Final Project Video](https://i.imgur.com/FqAaJO4.gif)
