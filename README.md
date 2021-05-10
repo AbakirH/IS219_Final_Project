@@ -17,3 +17,6 @@
 
 ### App Works like this 
 ![Final Project Video](https://i.imgur.com/FqAaJO4.gif)
+
+### Watch the full video here
+https://i.imgur.com/FqAaJO4.mp4
